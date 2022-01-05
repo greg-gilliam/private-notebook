@@ -16,7 +16,6 @@ import styles from './Auth.css';
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
   const { setUser } = useUser();
-  const [error, setError] = useState(null);
 
   const handleSubmit = async (email, password) => {
     try {
@@ -42,7 +41,7 @@ export default function Auth({ isSigningUp = false }) {
         onSubmit={handleSubmit}
         label={isSigningUp ? 'Sign Up' : 'Sign In'}
       />
-      {error ? <p>{error}</p> : <></>}
+
       {isSigningUp ? (
         <p>
           Already have an account? <Link to="/login">Sign In</Link>
